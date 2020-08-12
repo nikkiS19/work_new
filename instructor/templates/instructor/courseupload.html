@@ -1,0 +1,20 @@
+<!-- course upload form-->
+{% extends 'landing/base.html' %}
+{% block content %}
+<h1>Welcome create your course here</h1>
+<form method="POST">
+{% csrf_token %}
+{{ form }}
+<input type="submit" name="Submit">
+</form>
+<!--
+<form actions="" method="POST">
+{% csrf_token %}
+{{ moduleForm }}
+</form>
+
+<form actions="" method="POST">
+{% csrf_token %}
+{{ lessonForm }}
+</form>
+{% endblock %}-->

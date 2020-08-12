@@ -1,0 +1,29 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+<div class="section">
+    <h1> {{ lesson.title }}    </h1>
+    <br>
+    <hr>
+<div class="card" style="width: 100%;">
+    <div class="card-body" >
+<video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+  >
+    <source src="{{ lesson.video_file.url }}" type="video/mp4" />
+<!-- <video width="500" height="440" 
+    controls src=""></video> -->
+</div>
+</div>
+
+
+
+
+<a href="{% url 'videos:list' %}" class="btn btn-secondary">Back</a>
+
+{% endblock %}

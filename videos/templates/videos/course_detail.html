@@ -1,0 +1,55 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+
+<h3 class="text-center">Detail Courses</h3>
+<hr>
+<br>
+
+<div class="row">
+
+    <div class="col-12">
+<div class="card">
+    <div class="card-body" style="width: 100%">
+        <div class="row">
+            <div class="col-sm-6">
+                <img style ="max-width: 40rem;" src="{{object.thumbnail.url}}" alt="" class="card-img-top">
+            </div>
+            <div class="col">
+                <div class="card" style="max-width: 20rem;">
+                    <div class="card-body">
+                        <img style ="width: 18rem;" src="{{object.thumbnail.url}}" alt="" class="card-img-top">
+                        <hr>
+                        <h3 class="card-text text-center">Instructor Name</h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <h1 style="text-transform: uppercase;" class="card-title">{{ object.title }}</h1>
+    <br>
+    <h3 class="card-title">Description</h3>
+    <p class="card-text">{{ object.description }}</p>
+    <h3 class="card-text">Contents</h3>
+<div class="card">
+    <div class="card-body" style="width: 100%;">
+    {% for lesson in object.lessons %}
+        <a href="{{ lesson.get_absolute_url }}" class="btn btn-light">{{lesson.title}}</a>  
+<br>
+    {% endfor %}
+</div>
+</div>
+    <p class="card-text"></p>
+    <a href="{% url 'videos:list' %}" class="btn btn-light">Back</a>
+    <a href="" class="btn btn-light">Enroll</a>
+
+</div>
+
+</div>
+    </div>
+
+
+</div>
+<hr>
+{% endblock %}

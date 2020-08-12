@@ -1,0 +1,24 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+
+
+<div class="card">
+    <div class="card-body">
+        <img src="{{ request.user.profile_pic.url }}" alt="" class="card-img-top">
+        <h2 class="card-title">
+            Welcome, {{user.first_name}} {{user.last_name}}
+        </h2>
+        <h4 class="card-title">
+            Your registered Email Address is: <span style="color: blueviolet;">{{ user.email}}</span>
+        </h4>
+        <p class="card-text">
+            You can not access to <a href="" class="link"> courses </a>.
+            <br>
+            Upgrade your <a href="" class="link">membership</a>.
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}
